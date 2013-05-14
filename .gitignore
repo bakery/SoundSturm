@@ -4,4 +4,3 @@ dist
 .sass-cache
 **/*.css
 node_modules
-test/scripts

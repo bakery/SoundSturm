@@ -184,7 +184,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-rev');
 
     grunt.registerTask('default', ['jshint','compass','livereload-start', 'connect:server', 'regarde:server']);
-    grunt.registerTask('test', ['jshint','livereload-start','connect:test','regarde:test']);
 
     grunt.registerTask('build',['clean:dist','copy:prebuild','useminPrepare','requirejs','compass:dist','rev','usemin']);
 
