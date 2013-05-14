@@ -7,6 +7,8 @@ require.config({
     shim: {
         'underscore' : {exports: '_' },
         'backbone' : {exports: 'Backbone', deps: ['underscore']},
+        'backbone.wreqr' : { deps : ['backbone']},
+        'backbone.babysitter' : { deps : ['backbone']},
         'json' : {exports: 'JSON'},
         'handlebars' :  {exports: 'Handlebars'}
     },
@@ -15,6 +17,10 @@ require.config({
         jquery: 'vendor/jquery.min',
         underscore: 'vendor/underscore',
         backbone: 'vendor/backbone',
+        marionette : 'vendor/backbone.marionette',
+        'backbone.wreqr' : 'vendor/backbone.wreqr',
+        'backbone.babysitter' : 'vendor/backbone.babysitter',
+        'backbone.localstorage' : 'vendor/backbone.localstorage',
         text : 'vendor/text',
         json : 'vendor/json2',
         handlebars : 'vendor/handlebars',
@@ -25,6 +31,6 @@ require.config({
 
 require(['jquery','app'], function($,Application) {
     if($("#mocha").length === 0){
-        Application.run();
+        Application.start();
     }
 });

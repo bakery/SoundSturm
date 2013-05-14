@@ -1,11 +1,13 @@
-define(["jquery"],function($){
+define(["backbone","marionette"],function(Backbone,Marionette){
 
-    return {
-        run : function(){
-            $(document).ready(function(){
-                alert("baker is in the house");    
-            });
-        }
-    };
+    // set up the app instance
+    var application = new Marionette.Application();
 
+    application.on('initialize:after', function() {
+        Backbone.history.start();
+        alert("your app is running");
+    });
+
+    // export the app from this module
+    return application;
 });
